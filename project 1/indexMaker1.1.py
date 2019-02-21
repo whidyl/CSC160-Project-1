@@ -25,10 +25,10 @@ def main():
     pprint(wordIndex)
     with open('Word-Index.txt', 'w') as f:
         #print(wordIndex, file=f)
-        for key, value in list(wordIndex.items()):
+        for key, value in sorted(list(wordIndex.items())):
             print(key+": ", file=f, end='')
-            for lineNum in value:
-                print(str(lineNum), file=f, end='')
+            for lineNum in sorted(value):
+                print(str(lineNum)+ ", ", file=f, end='')
             print(file=f)
 
 def getFileFromUser():
